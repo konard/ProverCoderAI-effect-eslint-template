@@ -1,7 +1,6 @@
 // eslint.config.mjs
 // @ts-check
 import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import tseslint from 'typescript-eslint';
 import vitest from "eslint-plugin-vitest";
@@ -20,15 +19,16 @@ import eslintCommentsConfigs from "@eslint-community/eslint-plugin-eslint-commen
 const codegenPlugin = fixupPluginRules(
 	codegen as unknown as Parameters<typeof fixupPluginRules>[0],
 );
+const suggestMembersRecommended = suggestMembers.configs["recommended"];
 
-export default defineConfig(
+export default tseslint.config(
   { ignores: ["lib"] },
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   eslintPlugin.configs.recommended,
   tseslint.configs.strictTypeChecked,
   effectEslint.configs.dprint,
-  suggestMembers.configs.recommended,
+  ...(suggestMembersRecommended ? [suggestMembersRecommended] : []),
   eslintCommentsConfigs.recommended,
   {
     name: "analyzers",

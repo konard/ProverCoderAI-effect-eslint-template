@@ -12,6 +12,7 @@
 	"include": [
 		"src/**/*",
 		"tests/**/*",
+		"types/**/*.d.ts",
 		"vite.config.ts",
 		"vitest.config.ts",
 		"eslint.config.mts"

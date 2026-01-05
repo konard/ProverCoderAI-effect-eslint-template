@@ -1,6 +1,7 @@
-import { RuleTester } from "@typescript-eslint/rule-tester"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
+
+import { RuleTester } from "@typescript-eslint/rule-tester"
 import tseslint from "typescript-eslint"
 import * as vitest from "vitest"
 
