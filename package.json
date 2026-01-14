@@ -15,7 +15,7 @@
     "changeset-version": "changeset version",
     "lint": "pnpm --filter @effect-template/eslint-template lint",
     "lint:effect": "pnpm --filter @effect-template/eslint-template lint:effect",
-    "lint:tests": "pnpm --filter @effect-template/app lint:tests",
+    "lint:tests": "pnpm --filter @effect-template/eslint-template lint:tests",
     "test": "pnpm --filter @effect-template/eslint-template test",
     "typecheck": "pnpm --filter @effect-template/eslint-template typecheck",
     "lint-app": "pnpm --filter @effect-template/app lint"
